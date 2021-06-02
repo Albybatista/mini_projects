@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+    <!-- PROMPT -->
+    <!-- 
+        This is a popular game played between two people. Each player gets to form one of three shapes using their hand:
+
+        rock (a closed fist)
+        paper (a flat hand)
+        scissors (a fist with the index finger and middle finger extended, forming a V) 
+    -->
+    <h1>Rock, Paper, Scissors</h1>
+    <label for="selection">Make Your Selection: </label>
+    <select id=selectionBox onchange="startGame();">
+        <option disabled selected value></option>
+        <option value="rock">Rock</option>
+        <option value="paper">Paper</option>
+        <option value="scissors">Scissors</option>
+    </select>
+    <p id="gameResult"></p>
+    <script>
+        function startGame() {
+            //Grab user selection
+            const selectionBox = document.getElementById("selectionBox");
+            const userSelection = selectionBox.options[selectionBox.selectedIndex].value;
+
+            //Generating computer choice
+            const randomNumber = Math.round(Math.random() * 2) + 1;
+            const computerSelection = selectionBox.options[randomNumber].value;
+            
+            //Game result messages
+            const gameResult = document.getElementById("gameResult");
+            const winningMsg = `Good stuff! The computer has chosen ${computerSelection} and you have chosen ${userSelection}. You have won this round!`;
+            const losingMsg = `Womp, womp, womp. Unfortunately, you have lost. The computer has chosen ${computerSelection} and you had chosen ${userSelection}. Better luck next time!`;
+            const tieMsg = `Phew, that was close! You have both chosen ${userSelection}. Try again and see if you can win the next round!`;
+
+            
+            //When there is a tie
+            if(userSelection === computerSelection) {
+                gameResult.innerText = tieMsg;
+            }
+
+            //User selects rock
+            if(userSelection === "rock" && computerSelection === "paper") {
+                gameResult.innerText = losingMsg;
+            }
+            if(userSelection === "rock" && computerSelection === "scissors") {
+                gameResult.innerText = winningMsg;
+            }
+
+            //User selects paper
+            if(userSelection === "paper" && computerSelection === "rock") {
+                gameResult.innerText = winningMsg;
+            }
+            if(userSelection === "paper" && computerSelection === "scissors") {
+                gameResult.innerText = losingMsg;
+            }
+
+            //User selects scissors
+            if(userSelection === "scissors" && computerSelection === "rock") {
+                gameResult.innerText = losingMsg;
+            }
+            if(userSelection === "scissors" && computerSelection === "paper") {
+                gameResult.innerText = winningMsg;
+            }
+        }
+    </script>
+</body>
+</html>
