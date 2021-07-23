@@ -1,9 +1,10 @@
 # Mini Projects
+Mini Projects done in HTML with CSS and JavaScript
 
-- Live Sites 
-  - [x] [Biography Info]()
-  - [x] [Is Palindrome?]()
-  - [x] [Lyrics Generator]()
-  - [x] [My Acronym]()
-  - [x] [Rock, Paper, Scissors]()
-  - [x] [Word Count]()
+## Source Code and Live Demos
+  - [Biography Info]() - [Demo]()
+  - [Is Palindrome?]() - [Demo]()
+  - [Lyrics Generator]() - [Demo]()
+  - [My Acronym]() - [Demo]()
+  - [Rock, Paper, Scissors]() - [Demo]()
+  - [Word Count]() - [Demo]()

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Parser</title>
+</head>
+<body>
+  <!-- PROMPT -->
+  <!--
+    Collect an email address from the user and then find out if the user has a custom domain name or a popular domain name. For example:
+
+    Input: mary.jane@gmail.com
+    Output: Hey Mary, I see your email is registered with Google. That's cool!.
+    Input: peter.pan@myfantasy.com
+    Output: Hey Peter, looks like you've got your own custom setup at MyFantasy. Impressive!.
+    The program should help you get the username and domain name from an email address.
+
+    If you want to push this further, you can customize the application and send a message to the host with this information.
+  -->
+  <h1>Welcome to the Email Parser!</h1>
+  <p>Please enter your email below.</p>
+  <form>
+    <label for="email">Email: </label>
+    <input type="text" id="userEmailInput"/>
+    <button type="button" onclick="emailParser();">Submit</button>
+  </form>
+  <div id="result"></div>
+  <script>
+    function emailParser() {
+      let userInfo = {
+        "name": "",
+        "domain": "",
+      };
+
+      let emailInput = document.getElementById('userEmailInput').value;
+    
+      if(emailInput.includes("@")){
+        for(let i = 0; i < emailInput.length; i++){
+          let atSignIndex = emailInput.indexOf("@");
+          let period = emailInput.indexOf(".");
+          userInfo.name = emailInput.slice(0, atSignIndex);
+          userInfo.domain = emailInput.slice(atSignIndex + 1, period);
+          userInfo.email = emailInput;
+        }
+        result.innerText = `Hey ${userInfo.name}! I see your email, ${emailInput}, is registered with ${userInfo.domain}!`;
+      } else {
+        result.innerText = "Unfortunately, it looks like you have submitted an incorrect email. Please try again.";
+      }
+      emailInput = document.getElementById('userEmailInput').value = "";
+    }
+  </script>
+</body>
+</html>
