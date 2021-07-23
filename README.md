@@ -9,3 +9,4 @@ Mini Projects done in HTML with CSS and JavaScript
   - [Rock, Paper, Scissors]() - [Demo]()
   - [Word Count]() - [Demo]()
   - [Email Parser]() - [Demo]()
+  - [Tip Calculator]() - [Demo]()
