@@ -8,3 +8,4 @@ Mini Projects done in HTML with CSS and JavaScript
   - [My Acronym]() - [Demo]()
   - [Rock, Paper, Scissors]() - [Demo]()
   - [Word Count]() - [Demo]()
+  - [Email Parser]() - [Demo]()
