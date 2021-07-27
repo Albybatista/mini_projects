@@ -21,8 +21,32 @@
     To go even a step further, split unevenly (for example, one person pays 70% of the bill while the other pays 30%)
 
   -->
+  <h1>Tip Calculator</h1>
+  <p>
+    Please enter your bill total and we will provide you with tip totals
+  </p>
+  <input type="number" id="billSubtotal"/>
+  <button type="button" onclick="tipCalculator();">Calculate</button>
+  <p id="billWithTips"></p>
   <script>
+    function tipCalculator() {
+      let tipTotals = {
+        "18%": "",
+        "20%": "",
+        "25%": ""
+      }
+      
+      let tipResult = document.getElementById("billSubtotal").value;
+      
+      tipTotals["18%"] = (tipResult * 1.18).toFixed(2);
+      tipTotals["20%"] = (tipResult * 1.20).toFixed(2);
+      tipTotals["25%"] = (tipResult * 1.25).toFixed(2);
 
+      let renderAllTips = document.getElementById("billWithTips")
+      renderAllTips.innerHTML = Object.values(tipTotals);
+
+      tipResult = document.getElementById("billSubtotal").value = "";
+    }
   </script>
 </body>
 </html>
