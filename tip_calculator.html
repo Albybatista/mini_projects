@@ -42,8 +42,8 @@
       tipTotals["20%"] = (tipResult * 1.20).toFixed(2);
       tipTotals["25%"] = (tipResult * 1.25).toFixed(2);
 
-      let renderAllTips = document.getElementById("billWithTips")
-      renderAllTips.innerHTML = Object.values(tipTotals);
+      let renderAllTips = document.getElementById("billWithTips");
+      renderAllTips.innerHTML = `Your bill with the allocated tip percentages are listed below. 18%: ${tipTotals["18%"]} 20%: ${tipTotals["20%"]} 25%: ${tipTotals["25%"]}`;
 
       tipResult = document.getElementById("billSubtotal").value = "";
     }
