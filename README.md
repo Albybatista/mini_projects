@@ -10,3 +10,4 @@ Mini Projects done in HTML with CSS and JavaScript
   - [Word Count]() - [Demo]()
   - [Email Parser]() - [Demo]()
   - [Tip Calculator]() - [Demo]()
+  - [Guess the Number]() - [Demo]()
