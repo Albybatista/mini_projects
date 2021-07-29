@@ -17,8 +17,32 @@
 
     Finally, when the user eventually guesses the right number you congratulate them and show the number of attempts they had.
   -->
-  <script>
+  <h1>Guess the Number</h1>
+  <p>Welcome to Guess the Number! Enter a number between 1 and 50 and we'll let you know if you guessed right.
+  </p>
+  <input type="number" id="userNumInput" />
+  <button type="button" onclick="guessTheNum();">Enter</button>
+  <p id="resultMsg"></p>
+<script>
+  function guessTheNum() {
 
-  </script>
+    let userNumValue = document.getElementById("userNumInput").value;
+    let renderResult = document.getElementById("resultMsg");
+    let randomNum = Math.floor(Math.random() * 50);
+    let attempts = 0;
+    let winningMsg = `Congrats! The number was ${randomNum} and you have guessed the number correctly in ${attempts} attemps!`;
+    let losingMsg = `Unfortunately, you have incorrectly guessed the number. You currently have ${attempts} attempts. Would you like to continue to guess or would you like to quit?`;
+
+    if(userNumValue == randomNum) {
+      renderResult.innerHTML = winningMsg;
+      attempts++; 
+    } else {
+      renderResult.innerHTML = losingMsg;
+      attempts++;
+    }
+
+    userNumValue = document.getElementById("userNumInput").value = "";
+  }
+</script>
 </body>
 </html>
